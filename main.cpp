@@ -153,8 +153,9 @@ void Query(){
     system("pause");
     system("clear");
 }
-void EditContact(const std::string&& ID){
+void EditContact(std::string&& ID, std::string&& Number){
     system("clear");
+    ID=ID+Number;
     std::ifstream Reader("contacts.txt");
     std::string S;
     bool Exist=false;
@@ -227,7 +228,7 @@ int main()
             std::cout<<"Enter The Number : ";
             std::cin>>Num;
             Name+=" ";
-            EditContact(Name+Num);
+            EditContact(Name,Num);
             system("clear");
         }
         else if(Cmnd=='4'){
